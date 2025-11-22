@@ -1,6 +1,6 @@
 // Resource outputs
-output "tst_vpc_id" {
-  value       = google_compute_network.tst_vpc.id
+output "bld_vpc_id" {
+  value       = google_compute_network.bld_vpc.id
   description = "The ID of the created vpc resource."
 }
 
