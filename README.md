@@ -1,5 +1,5 @@
-# Terraform Cloud (TFC) Lab 
-This repository contains Terraform code to run using VCS-Driven / CLI-Driven workflow of TFC for infrastructure deployment on Google Cloud Platform.
+# HCP Terraform Lab
+This repository contains Terraform code to run using VCS-Driven / CLI-Driven workflow of HCP Terraform (previously k/a Terraform Cloud) for infrastructure deployment on Google Cloud Platform.
 
 ## Prerequisites
 Below prerequisites must be fulfilled for successful execution of code.
