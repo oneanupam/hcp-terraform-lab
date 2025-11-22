@@ -27,16 +27,17 @@ In order to execute terraform code using CLI-Driven workflow of HCP Terraform (P
 - HCP Packer
 - HCP Terraform (linked)
 
-4. For CLI-Driven workflow, configure the following settings to use Terraform Cloud for a particular working directory:
-- Provide credentials to access Terraform Cloud, preferably by using the `terraform login` command.
+4. For CLI-Driven workflow, configure the following settings to use HCP Terraform for a particular working directory:
+- Provide credentials to access HCP Terraform, preferably by using the `terraform login` command.
 - Add a cloud block in your terraform configuration, to specify which organization and workspace(s) to use.
 
-**Note:** When using the VCS-driven workflow for Terraform Cloud, you do not need to define the cloud block in your configuration.
+> [!NOTE]
+> When using the VCS-driven workflow for Terraform Cloud, you do not need to define the cloud block in your configuration.
 
 ## Terraform Code Execution
-- In VCS-Driven workflow of terraform cloud, terraform cloud automatically queues plans whenever changes are committed to your configuration's VCS repo. So, In this approach, Terraform Cloud can automatically fetch content from supported VCS providers, and uses webhooks to get notified of code changes.
+- In VCS-Driven workflow of HCP Terraform, terraform cloud automatically queues plans whenever changes are committed to your configuration's VCS repo. So, In this approach, HCP Terraform can automatically fetch content from supported VCS providers, and uses webhooks to get notified of code changes.
 
-- In CLI-Driven workflow of terraform cloud, you initiate Terraform operations in your Terminal, and use Terraform Cloud's ephemeral remote execution environments for your operations. In this approach, the `terraform plan` and `terraform apply` commands will perform remote runs by uploading a configuration from a local working directory.
+- In CLI-Driven workflow of HCP Terraform, you initiate Terraform operations in your Terminal, and use HCP Terraform's ephemeral remote execution environments for your operations. In this approach, the `terraform plan` and `terraform apply` commands will perform remote runs by uploading a configuration from a local working directory.
 
 ## References
 - https://registry.terraform.io/providers/hashicorp/google/latest/docs/guides/provider_reference
