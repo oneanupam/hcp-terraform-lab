@@ -31,6 +31,3 @@ override.tf.json
 # Credential files
 /credentials/*.json
 /credentials/*.json*
-
-# Additional files
-docs/*

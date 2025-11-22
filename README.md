@@ -1,25 +1,31 @@
 # HCP Terraform Lab
-This repository contains Terraform code to run using VCS-Driven / CLI-Driven workflow of HCP Terraform (previously k/a Terraform Cloud) for infrastructure deployment on Google Cloud Platform.
+This repository contains Terraform code to run using VCS-Driven/CLI-Driven workflow of HCP Terraform (previously k/a Terraform Cloud) for infrastructure deployment on Google Cloud Platform.
 
 ## Prerequisites
 Below prerequisites must be fulfilled for successful execution of code.
 
 ### Software Requirement
-Resources in this repository are meant for use with Terraform 1.3.6 (Check the version using `terraform version`). If you don't have the compatible version, download it from official Terraform repository.
+Resources in this repository are meant for use with Terraform 1.14.0 (Check the version using `terraform version`). If you don't have the compatible version, download it from official Terraform repository.
 
--   [Terraform](https://www.terraform.io/downloads.html) >= 1.3.6
+-   [Terraform](https://www.terraform.io/downloads.html) >= 1.14.0
 
 **Note:** See [Installation-Guide](https://gist.github.com/anupam-sy/7458df6506e8e3cfb28c0ff56fab546a) on how to install Terraform.
 
 ### Permissions Requirement
-In order to execute terraform code using CLI-Driven workflow of TFC (Terraform Cloud):
+In order to execute terraform code using CLI-Driven workflow of HCP Terraform (Previously k/a Terraform Cloud):
 
 1. Create a Service Account on Google Cloud Platform and grant the following roles. Access can be more fine-grained to follow Principle of least privilege (PoLP).
 - `roles/resourcemanager.projectOwner` on all the projects where you want to house your resources using service account's email.
 
-2. Create a JSON Key for your service account and save the service account key content in a Terraform Cloud environment variable called "GOOGLE_CREDENTIALS". Make sure to get the content of the JSON file using: `cat sa-key.json | jq -c`. Don't forget to mark the env variable as Sensitive on TFC workspace. All runs within the workspace will use the GOOGLE_CREDENTIALS variable to authenticate with Google Cloud Platform.
+2. Create a JSON Key for your service account and save the service account key content in a Terraform Cloud environment variable called "GOOGLE_CREDENTIALS". Make sure to get the content of the JSON file using: `cat sa-key.json | jq -c`. Don't forget to mark the env variable as Sensitive on HCP Terraform workspace. All runs within the workspace will use the GOOGLE_CREDENTIALS variable to authenticate with Google Cloud Platform.
 
-3. Create an account on terraform cloud (https://app.terraform.io/) and create an organization. Then create a workspace inside the organization.
+3. Create an account on terraform cloud (https://app.terraform.io/) and create an organization. Then create a workspace inside the organization. Please note, HCP platform https://portal.cloud.hashicorp.com/ is the central dashboard for all managed HashiCorp services mentioned below.
+
+- HCP Vault
+- HCP Consul
+- HCP Boundary
+- HCP Packer
+- HCP Terraform (linked)
 
 4. For CLI-Driven workflow, configure the following settings to use Terraform Cloud for a particular working directory:
 - Provide credentials to access Terraform Cloud, preferably by using the `terraform login` command.
