@@ -9,6 +9,11 @@ variable "default_region" {
   description = "The default region for the resources to be created."
 }
 
+variable "vpc_name" {
+  type        = string
+  description = "The name of the VPC network."
+}
+
 variable "storage_bucket_name" {
   type        = string
   description = "The name of the google cloud storage bucket."
