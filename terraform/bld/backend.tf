@@ -8,9 +8,9 @@ When using the VCS-driven workflow for Terraform Cloud, there is no need to defi
 terraform {
   cloud {
     organization = "oneanupam"
-    # bld environment workspace configuration
+    # bld environment workspace configuration, not needed for VCS-driven workflow
     workspaces {
-      name = "fdn-wrk-bld-02"
+      name = "fdn-wrk-bld-01"
     }
   }
 }
